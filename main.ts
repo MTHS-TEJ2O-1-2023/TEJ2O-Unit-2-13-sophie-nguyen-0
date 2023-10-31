@@ -31,15 +31,18 @@ input.onButtonPressed(Button.A, function() {
   basic.clearScreen()
   let loopCounter = 4
 
+  // neopixel
+  neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Red))
+  neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Red))
+  neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Red))
+  neopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Red))
+  neopixelStrip.show()
+
   // loop
   while (loopCounter >= 0) {
     basic.pause(500)
     basic.showNumber(loopCounter)
-    neopixelStrip = neopixel.create(DigitalPin.P16, loopCounter, NeoPixelMode.RGB)
-    neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Red))
-    neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Red))
-    neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Red))
-    neopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Red))
+    neopixelStrip.setPixelColor(loopCounter, neopixel.colors(NeoPixelColors.Black))
     neopixelStrip.show()
     loopCounter = loopCounter - 1
   }
