@@ -44,6 +44,7 @@ while True:
         print(neopixel_strip[3])
         neopixel_strip.show()
 
+        # loop
         while loop_counter >= 0:
             display.show(str(loop_counter))
 
